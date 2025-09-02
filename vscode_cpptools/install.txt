@@ -1,0 +1,162 @@
+1. 下载和安装cursor的老版本，比如1.2.1
+2. 下载老版本的vscode的cpp_tools插件
+    获取插件信息​
+    ​发布者（Publisher）​: ms-vscode
+    ​插件名（Extension Name）​: cpptools
+    ​版本号（Version）​: 在 官方页面 查看最新版本号（如 2.0.0）
+    ​拼接下载链接​
+    使用格式：
+    url
+    复制
+    https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/[版本号]/vspackage?targetPlatform=[平台]
+    ​示例​：
+    Linux x64:
+    url
+    复制
+    https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/2.0.0/vspackage?targetPlatform=linux-x64
+    Windows 64-bit:
+    url
+    复制
+    https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/2.0.0/vspackage?targetPlatform=win32-x64
+    macOS Apple Silicon:
+    url
+    复制
+    https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/2.0.0/vspackage?targetPlatform=darwin-arm64
+    ✅ ​注​：将 [版本号] 替换为实际版本，[平台] 替换为你的操作系统类型
+    
+    https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/1.23.6/vspackage?targetPlatform=linux-x64
+
+   比如Linux的1.23.5版本：https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/1.23.5/vspackage?targetPlatform=linux-x64
+
+
+3. 如果是远端开发，上传vsix文件到远端服务器
+4. 手工安装
+   4.1 ctrl + shift + p
+   4.2 Extensions: Install from VSIX...
+
+注意： 
+1. 要禁用Anysphere的cpptools, 这个跟vscode的cpptools有冲突
+2. .vscode/c_cpp_properties.json是否需要配置，1.2.1的不需要，其他版本可能需要配置
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/data/bazel_cache/55a3e5df3a8dfa6e40f870dedd73df89/execroot/billno",
+                "/data/bazel_cache/55a3e5df3a8dfa6e40f870dedd73df89/execroot/billno/bazel-out/k8-opt/bin",
+                "/data/bazel_cache/55a3e5df3a8dfa6e40f870dedd73df89/execroot/billno/bazel-out/k8-opt/bin/_virtual_includes",
+                "/data/bazel_cache/55a3e5df3a8dfa6e40f870dedd73df89/execroot/billno/external",
+                "${workspaceFolder}",
+                "${workspaceFolder}/api",
+                "${workspaceFolder}/api/fable_plugin",
+                "${workspaceFolder}/test",
+                "${workspaceFolder}/api/async_task",
+                "${workspaceFolder}/api/comm_cache",
+                "${workspaceFolder}/api/comm_config",
+                "${workspaceFolder}/api/comm_identity",
+                "${workspaceFolder}/api/comm_log",
+                "${workspaceFolder}/api/errcode",
+                "${workspaceFolder}/api/heartbeat",
+                "${workspaceFolder}/api/monitor",
+                "${workspaceFolder}/api/ap",
+                "${workspaceFolder}/api/sdk_frame_init",
+                "${workspaceFolder}/sdk",
+                "${workspaceFolder}/sdk/async_task",
+                "${workspaceFolder}/sdk/comm_cache",
+                "${workspaceFolder}/sdk/comm_config",
+                "${workspaceFolder}/sdk/comm_errcode",
+                "${workspaceFolder}/sdk/comm_identity",
+                "${workspaceFolder}/sdk/comm_log",
+                "${workspaceFolder}/sdk/dns_degrade",
+                "${workspaceFolder}/sdk/entity",
+                "${workspaceFolder}/sdk/errcode",
+                "${workspaceFolder}/sdk/heartbeat",
+                "${workspaceFolder}/sdk/ipc_queue",
+                "${workspaceFolder}/sdk/monitor",
+                "${workspaceFolder}/sdk/mq",
+                "${workspaceFolder}/sdk/runtime",
+                "${workspaceFolder}/sdk/shm_cache",
+                "${workspaceFolder}/sdk/shm_cache/cache_stats",
+                "${workspaceFolder}/sdk/shm_cache/double_buffer",
+                "${workspaceFolder}/sdk/shm_cache/mmap_file",
+                "${workspaceFolder}/sdk/stat_queue",
+                "${workspaceFolder}/sdk/ap",
+                "${workspaceFolder}/sdk/sdk_frame_init",
+                "${workspaceFolder}/example",
+                "${workspaceFolder}/example/third_lib/jsoncpp/include",
+                "${workspaceFolder}/third_party/flatbuffers_v22.9.24/include",
+                "${workspaceFolder}/third_party/flatbuffers_v22.9.24/grpc",
+                "${workspaceFolder}/api/sdk_frame_init",
+                "${workspaceFolder}/sdk/sdk_frame_init",
+                "${workspaceFolder}/bazel-out/k8-fastbuild/bin/_virtual_includes/sdk_comm_cxx",
+                "${workspaceFolder}/bazel-out/k8-fastbuild/bin/_virtual_includes/sdk_headers",
+                "${workspaceFolder}/bazel-out/k8-fastbuild/bin/_virtual_includes/commsdk_plugin",
+                "/data2/sdk_code/sdk_comm_code/sdk_comm_cxx/bazel-out/k8-fastbuild/bin/_virtual_includes/sdk_comm_cxx",
+                "/data2/sdk_code/sdk_comm_code/sdk_comm_cxx/bazel-out/k8-fastbuild/bin/_virtual_includes/sdk_headers",
+                "/data2/sdk_code/sdk_comm_code/sdk_comm_cxx/bazel-out/k8-fastbuild/bin/_virtual_includes/commsdk_plugin",
+                "/usr/local/cftlib/curl_api/include",
+                "/usr/local/cftlib/libssh2/include",
+                "/usr/include",
+                "/usr/local/include",
+                "/usr/include/c++/4.8.2",
+                "/usr/include/c++/4.8.2/x86_64-redhat-linux",
+                "/usr/include/c++/4.8.2/backward",
+                "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include",
+                "/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include-fixed",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include/x86_64-redhat-linux",
+                "/usr/local/include/gtest",
+                "/usr/include/gtest",
+                "/usr/local/include/flatbuffers",
+                "/usr/include/flatbuffers",
+                "/root/.cache/bazel/_bazel_root/*/external/com_github_google_flatbuffers/include",
+                "/root/.cache/bazel/_bazel_root/*/execroot/sdk_comm_cpp/bazel-out/*/bin/external/com_github_google_flatbuffers/src/_virtual_includes/flatbuffers",
+                "/root/.cache/bazel/_bazel_root/*/execroot/sdk_comm_cpp/bazel-out/*/bin/external/com_github_google_flatbuffers/_virtual_includes/flatbuffers",
+                "/root/.cache/bazel/_bazel_root/*/external/jsoncpp/jsoncpp/include",
+                "/root/.cache/bazel/_bazel_root/*/sandbox/*/execroot/sdk_comm_cpp/external/jsoncpp/jsoncpp/include",
+                "${workspaceFolder}/sdk/comm_cache",
+                "${workspaceFolder}/sdk/comm_log",
+                "${workspaceFolder}/sdk/runtime",
+                "${workspaceFolder}/sdk/entity",
+                "${workspaceFolder}/bazel-out/k8-fastbuild/bin/external",
+                "${workspaceFolder}/bazel-fit/sdk_comm_cxx/bazel-out/k8-fastbuild/bin/external"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "LINUX",
+                "__linux__",
+                "FLATBUFFERS_LOCALE_INDEPENDENT=1",
+                "FLATBUFFERS_NAMESPACE=sdk_comm_fb"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerArgs": [
+                "-std=c++11",
+                "-Wall",
+                "-Wextra",
+                "-pthread",
+                "-g",
+                "-DFLATBUFFERS_NAMESPACE=sdk_comm_fb"
+            ],
+            "compileCommands": "${workspaceFolder}/compile_commands.json",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/api",
+                    "${workspaceFolder}/sdk",
+                    "${workspaceFolder}/example",
+                    "/data/bazel_cache/55a3e5df3a8dfa6e40f870dedd73df89/execroot/billno",
+                    "/data/bazel_cache/55a3e5df3a8dfa6e40f870dedd73df89/execroot/billno/bazel-out/k8-opt/bin",
+                    "${workspaceFolder}/bazel-out/k8-fastbuild/bin"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+} 
+
